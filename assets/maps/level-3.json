@@ -36,6 +36,11 @@
              "scrollFactorX":"0.5",
              "scrollFactorY":"1"
             },
+         "propertytypes":
+            {
+             "scrollFactorX":"string",
+             "scrollFactorY":"string"
+            },
          "type":"tilelayer",
          "visible":true,
          "width":50,
@@ -52,6 +57,11 @@
              "scrollFactorX":"0.5",
              "scrollFactorY":"1"
             },
+         "propertytypes":
+            {
+             "scrollFactorX":"string",
+             "scrollFactorY":"string"
+            },
          "type":"tilelayer",
          "visible":true,
          "width":50,
@@ -66,6 +76,10 @@
          "properties":
             {
              "solid":"true"
+            },
+         "propertytypes":
+            {
+             "solid":"string"
             },
          "type":"tilelayer",
          "visible":true,
@@ -82,10 +96,6 @@
                  "height":30,
                  "id":4,
                  "name":"bad-cat",
-                 "properties":
-                    {
-
-                    },
                  "rotation":0,
                  "type":"Shootingcat",
                  "visible":true,
@@ -97,10 +107,6 @@
                  "height":30,
                  "id":5,
                  "name":"bad-cat",
-                 "properties":
-                    {
-
-                    },
                  "rotation":0,
                  "type":"Shootingcat",
                  "visible":true,
@@ -112,10 +118,6 @@
                  "height":30,
                  "id":6,
                  "name":"bad-cat",
-                 "properties":
-                    {
-
-                    },
                  "rotation":0,
                  "type":"Shootingcat",
                  "visible":true,
@@ -127,10 +129,6 @@
                  "height":30,
                  "id":7,
                  "name":"bad-cat",
-                 "properties":
-                    {
-
-                    },
                  "rotation":0,
                  "type":"Shootingcat",
                  "visible":true,
@@ -147,6 +145,12 @@
                      "entity":"chick",
                      "new_x":"33",
                      "new_y":"1344"
+                    },
+                 "propertytypes":
+                    {
+                     "entity":"string",
+                     "new_x":"string",
+                     "new_y":"string"
                     },
                  "rotation":0,
                  "type":"TeleportTrigger",
@@ -165,6 +169,12 @@
                      "new_x":"33",
                      "new_y":"1344"
                     },
+                 "propertytypes":
+                    {
+                     "entity":"string",
+                     "new_x":"string",
+                     "new_y":"string"
+                    },
                  "rotation":0,
                  "type":"TeleportTrigger",
                  "visible":true,
@@ -181,6 +191,12 @@
                      "entity":"chick",
                      "new_x":"33",
                      "new_y":"1344"
+                    },
+                 "propertytypes":
+                    {
+                     "entity":"string",
+                     "new_x":"string",
+                     "new_y":"string"
                     },
                  "rotation":0,
                  "type":"TeleportTrigger",
@@ -205,10 +221,6 @@
                  "height":31,
                  "id":1,
                  "name":"chick",
-                 "properties":
-                    {
-
-                    },
                  "rotation":0,
                  "type":"Player",
                  "visible":true,
@@ -220,10 +232,6 @@
                  "height":30,
                  "id":2,
                  "name":"bad-cat",
-                 "properties":
-                    {
-
-                    },
                  "rotation":0,
                  "type":"Walkingcat",
                  "visible":true,
@@ -241,6 +249,12 @@
                      "level":"4",
                      "trigger_on_touch":"true"
                     },
+                 "propertytypes":
+                    {
+                     "entity":"string",
+                     "level":"string",
+                     "trigger_on_touch":"string"
+                    },
                  "rotation":0,
                  "type":"NextLevelTrigger",
                  "visible":true,
@@ -255,12 +269,17 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":16,
+ "nextobjectid":17,
  "orientation":"orthogonal",
  "properties":
     {
      "height":"1600",
      "width":"1600"
+    },
+ "propertytypes":
+    {
+     "height":"string",
+     "width":"string"
     },
  "renderorder":"right-down",
  "tileheight":32,
@@ -273,10 +292,6 @@
          "imagewidth":896,
          "margin":0,
          "name":"tiles",
-         "properties":
-            {
-
-            },
          "spacing":0,
          "tilecount":420,
          "tileheight":32,
@@ -597,6 +612,325 @@
              "97":
                 {
                  "solid":"true"
+                }
+            },
+         "tilepropertytypes":
+            {
+             "112":
+                {
+                 "solid":"string"
+                },
+             "113":
+                {
+                 "solid":"string"
+                },
+             "114":
+                {
+                 "solid":"string"
+                },
+             "115":
+                {
+                 "solid":"string"
+                },
+             "116":
+                {
+                 "solid":"string"
+                },
+             "117":
+                {
+                 "solid":"string"
+                },
+             "12":
+                {
+                 "solid":"string"
+                },
+             "124":
+                {
+                 "solid":"string"
+                },
+             "125":
+                {
+                 "solid":"string"
+                },
+             "129":
+                {
+                 "jump-velocity":"string"
+                },
+             "13":
+                {
+                 "solid":"string"
+                },
+             "140":
+                {
+                 "solid":"string"
+                },
+             "141":
+                {
+                 "solid":"string"
+                },
+             "142":
+                {
+                 "solid":"string"
+                },
+             "143":
+                {
+                 "solid":"string"
+                },
+             "144":
+                {
+                 "solid":"string"
+                },
+             "145":
+                {
+                 "solid":"string"
+                },
+             "152":
+                {
+                 "solid":"string"
+                },
+             "153":
+                {
+                 "solid":"string"
+                },
+             "168":
+                {
+                 "solid":"string"
+                },
+             "169":
+                {
+                 "solid":"string"
+                },
+             "170":
+                {
+                 "solid":"string"
+                },
+             "171":
+                {
+                 "solid":"string"
+                },
+             "172":
+                {
+                 "solid":"string"
+                },
+             "173":
+                {
+                 "solid":"string"
+                },
+             "180":
+                {
+                 "solid":"string"
+                },
+             "181":
+                {
+                 "solid":"string"
+                },
+             "196":
+                {
+                 "solid":"string"
+                },
+             "197":
+                {
+                 "solid":"string"
+                },
+             "198":
+                {
+                 "solid":"string"
+                },
+             "199":
+                {
+                 "solid":"string"
+                },
+             "200":
+                {
+                 "solid":"string"
+                },
+             "201":
+                {
+                 "solid":"string"
+                },
+             "208":
+                {
+                 "solid":"string"
+                },
+             "209":
+                {
+                 "solid":"string"
+                },
+             "224":
+                {
+                 "solid":"string"
+                },
+             "225":
+                {
+                 "solid":"string"
+                },
+             "226":
+                {
+                 "solid":"string"
+                },
+             "227":
+                {
+                 "solid":"string"
+                },
+             "228":
+                {
+                 "solid":"string"
+                },
+             "229":
+                {
+                 "solid":"string"
+                },
+             "236":
+                {
+                 "solid":"string"
+                },
+             "237":
+                {
+                 "solid":"string"
+                },
+             "252":
+                {
+                 "solid":"string"
+                },
+             "253":
+                {
+                 "solid":"string"
+                },
+             "254":
+                {
+                 "solid":"string"
+                },
+             "255":
+                {
+                 "solid":"string"
+                },
+             "256":
+                {
+                 "solid":"string"
+                },
+             "257":
+                {
+                 "solid":"string"
+                },
+             "264":
+                {
+                 "solid":"string"
+                },
+             "265":
+                {
+                 "solid":"string"
+                },
+             "28":
+                {
+                 "solid":"string"
+                },
+             "29":
+                {
+                 "solid":"string"
+                },
+             "292":
+                {
+                 "solid":"string"
+                },
+             "293":
+                {
+                 "solid":"string"
+                },
+             "30":
+                {
+                 "solid":"string"
+                },
+             "31":
+                {
+                 "solid":"string"
+                },
+             "32":
+                {
+                 "solid":"string"
+                },
+             "320":
+                {
+                 "solid":"string"
+                },
+             "321":
+                {
+                 "solid":"string"
+                },
+             "33":
+                {
+                 "solid":"string"
+                },
+             "40":
+                {
+                 "solid":"string"
+                },
+             "41":
+                {
+                 "solid":"string"
+                },
+             "56":
+                {
+                 "solid":"string"
+                },
+             "57":
+                {
+                 "solid":"string"
+                },
+             "58":
+                {
+                 "solid":"string"
+                },
+             "59":
+                {
+                 "solid":"string"
+                },
+             "60":
+                {
+                 "solid":"string"
+                },
+             "61":
+                {
+                 "solid":"string"
+                },
+             "68":
+                {
+                 "solid":"string"
+                },
+             "69":
+                {
+                 "solid":"string"
+                },
+             "84":
+                {
+                 "solid":"string"
+                },
+             "85":
+                {
+                 "solid":"string"
+                },
+             "86":
+                {
+                 "solid":"string"
+                },
+             "87":
+                {
+                 "solid":"string"
+                },
+             "88":
+                {
+                 "solid":"string"
+                },
+             "89":
+                {
+                 "solid":"string"
+                },
+             "96":
+                {
+                 "solid":"string"
+                },
+             "97":
+                {
+                 "solid":"string"
                 }
             },
          "tilewidth":32
