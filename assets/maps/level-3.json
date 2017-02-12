@@ -96,6 +96,14 @@
                  "height":30,
                  "id":4,
                  "name":"bad-cat",
+                 "properties":
+                    {
+                     "idle-period":"3000"
+                    },
+                 "propertytypes":
+                    {
+                     "idle-period":"string"
+                    },
                  "rotation":0,
                  "type":"Shootingcat",
                  "visible":true,
@@ -107,6 +115,14 @@
                  "height":30,
                  "id":5,
                  "name":"bad-cat",
+                 "properties":
+                    {
+                     "idle-period":"3000"
+                    },
+                 "propertytypes":
+                    {
+                     "idle-period":"string"
+                    },
                  "rotation":0,
                  "type":"Shootingcat",
                  "visible":true,
@@ -118,6 +134,14 @@
                  "height":30,
                  "id":6,
                  "name":"bad-cat",
+                 "properties":
+                    {
+                     "idle-period":"3000"
+                    },
+                 "propertytypes":
+                    {
+                     "idle-period":"string"
+                    },
                  "rotation":0,
                  "type":"Shootingcat",
                  "visible":true,
@@ -129,6 +153,14 @@
                  "height":30,
                  "id":7,
                  "name":"bad-cat",
+                 "properties":
+                    {
+                     "idle-period":"3000"
+                    },
+                 "propertytypes":
+                    {
+                     "idle-period":"string"
+                    },
                  "rotation":0,
                  "type":"Shootingcat",
                  "visible":true,
@@ -232,6 +264,14 @@
                  "height":30,
                  "id":2,
                  "name":"bad-cat",
+                 "properties":
+                    {
+                     "idle-period":"3000"
+                    },
+                 "propertytypes":
+                    {
+                     "idle-period":"string"
+                    },
                  "rotation":0,
                  "type":"Walkingcat",
                  "visible":true,
@@ -269,7 +309,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":17,
+ "nextobjectid":22,
  "orientation":"orthogonal",
  "properties":
     {
