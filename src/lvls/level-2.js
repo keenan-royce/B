@@ -90,13 +90,19 @@
 				url: 'assets/img/paused.png',
 				width: 320,
 				height: 240
-			}/*,
-			{
+			},
+			/*{
 				name: 'preload',
 				url: 'assets/img/loading.png',
 				width: 320,
 				height: 240
-			}*/
+			},*/
+            {
+                name: 'rain',
+                url: 'assets/img/rain.png',
+                width: 320,
+                height: 240
+            }
 		];
 		this.paused_image_key = 'paused';
 
