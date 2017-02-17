@@ -45,7 +45,7 @@
 			{
 				name: 'chick',
 				url: 'assets/img/b_kirbstyle.png',
-				width: 42,
+				width: 48,
 				height:30
 			},
 			{
