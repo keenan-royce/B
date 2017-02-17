@@ -19,7 +19,7 @@
 		};
 	MyGame.Levelselect.prototype.create = function(){
 		var game_state = this.game.state.states['default'];
-		console.log(game_state);
+		//console.log(game_state);
 
 		this.logo = this.game.add.sprite( 0, 0, 'level-select' );
 		this.lvlbuttons = {};
@@ -75,7 +75,7 @@
 				var new_state = MyGame["Level_" + item.name];
 				game_state.music.stop('logo-fx');
 				this.game.state.add( 'level-' + item.name, new_state, true );
-				console.log('we loaded');
+				//console.log('we loaded');
 			}
 		};
 
