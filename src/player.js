@@ -137,10 +137,12 @@
 		this.facing = Phaser.RIGHT;
 		this.game.input.gamepad.start();
 
+        /* // The End text for final level
 		if (this.level == 5) {
 			this.win_text = this.game.add.bitmapText(this.game.camera.x + this.game.camera.width/2, this.game.camera.y + this.game.camera.height/2, 'carrier_command', 'the end!', 20);
 
 		}
+        */
 
 		//this.pad1  = navigator.getGamepads()[0];
 		//console.log(this.pad1);
