@@ -162,6 +162,7 @@
 		this.jump_increment = 605; //you can jump 7 blocks high or 13 long with dash + double jump or 8 with only double jump
 		this.walk_velocity = 1000;
 		this.dash_speed = 600;
+        game.debug.body('chick')
 
 
 		// Phaser.Sprite settings
@@ -170,12 +171,12 @@
 		this.body.gravity.y = 2000;
 		this.body.maxVelocity.y = this.jump_increment;
 		this.body.maxVelocity.x = 250;
+		this.anchor.set(0.8, 0.5);
 
-		this.animations.add( 'jump-left', [3], 3, true );
-		this.animations.add( 'jump-right', [3], 3, true );
-		this.animations.add( 'left', [1, 2], 3, true );
-		this.animations.add( 'right', [1, 2], 3, true );
-		this.animations.add( 'dash', [4], 3, true);
+		this.animations.add( 'jumping', [7], 3, true );
+		this.animations.add( 'walking', [4, 5], 3, true );
+		this.animations.add('dashing', [8, 9, 10, 11, 12], 20, false);
+        this.animations.add('idle', [6], 3, true)
 
 		game.add.existing( this );
 
@@ -310,21 +311,19 @@
 
 	// state machine event handlers:
 	MyGame.Player.prototype.idle = function() {
-		this.animations.stop();
-		this.frame = 0;
+	    this.animations.play('idle');
 		if( this.facing == Phaser.LEFT ) {
-			this.scale.x = -1;
+		    this.scale.x = -1;
 		} else {
-			this.scale.x = 1;
+		    this.scale.x = 1;
 		}
 	};
 
-	MyGame.Player.prototype.walking = function() {
-		if( this.facing == Phaser.LEFT ) {
-			this.animations.play( 'left' );
+	MyGame.Player.prototype.walking = function () {
+	    this.animations.play('walking');
+		if( this.facing == Phaser.LEFT ) {			
 			this.goLeft();
 		} else {
-			this.animations.play( 'right' );
 			this.goRight();
 		}
 	};
@@ -348,11 +347,6 @@
 		this.stunned_timer = this.time.time;
 		// TODO: frames/animation for stunned state
 		this.frame = 3;
-		if( this.facing == Phaser.LEFT ){
-			this.scale.x = -1;
-		} else {
-			this.scale.x = 1;
-		}
 	};
 
 	MyGame.Player.prototype.attacking = function() {
@@ -539,35 +533,37 @@
 	// move in air (jump/fall) right
 	MyGame.Player.prototype.airborneRight = function() {
 		this.goRight();
-		this.frame = 3;
+		this.frame = 7;
 	};
 
 	// move in air (jump/fall) left
 	MyGame.Player.prototype.airborneLeft = function()	{
 		this.goLeft();
-		this.frame = 3;
+		this.frame = 7;
 	};
 	// move right
 	MyGame.Player.prototype.goRight = function() {
-		this.scale.x = 1;
+	    this.scale.x = 1;
 		this.facing = Phaser.RIGHT;
-		this.animations.play( 'right' );
+		this.animations.play( 'walking' );
 		this.body.acceleration.x = this.walk_velocity;
 	};
 
 	// move left
 	MyGame.Player.prototype.goLeft = function()	{
-		// flip on x axis
-		this.scale.x = -1;
+	    this.scale.x = -1;
 		this.facing = Phaser.LEFT;
-		this.animations.play( 'left' );
+		this.animations.play('walking');
 		this.body.acceleration.x = -this.walk_velocity;
 	};
 
-	MyGame.Player.prototype.dashRight = function() {
-		this.animations.play( 'dash' );
-		this.body.acceleration.x = 0;
-		this.scale.x = 1;
+	MyGame.Player.prototype.dashRight = function () {
+
+	    if (this.animations.name != 'dashing') 
+	        this.animations.play('dashing');
+	    	   		
+	    this.body.acceleration.x = 0;
+	    this.scale.x = 1;
 		this.facing = Phaser.RIGHT;
 		if (this.body.velocity.x > 0){
 			if (380*Math.tan(this.body.velocity.x/600) > 0) {
@@ -581,9 +577,11 @@
 	// move left
 	MyGame.Player.prototype.dashLeft = function()	{
 		// flip on x axis
-		this.animations.play( 'dash' );
-		this.body.acceleration.x = 0;
-		this.scale.x = -1;
+	    if (this.animations.name != 'dashing')
+	        this.animations.play('dashing');
+	    
+	    this.body.acceleration.x = 0;
+	    this.scale.x = -1;
 		this.facing = Phaser.LEFT;
 		if (this.body.velocity.x < 0){
 			if (380*Math.tan(this.body.velocity.x/600) < 0) {
@@ -598,14 +596,13 @@
 		this.body.velocity.y = -this.jump_increment;
 		this.body.blocked.down = false;
 		this.body.touching.down = false;
+		this.animations.play('jumping');
 		// what direction are we facing
 		if( this.facing == Phaser.LEFT ) {
-		// flip on x axis
-			this.scale.x = -1;
-			this.animations.play( 'jump-left' );
+		    this.scale.x = -1;
 		} else {
-			this.scale.x = 1;
-			this.animations.play( 'jump-right' );
+		    this.scale.x = 1;
+
 		}
 	};
 
