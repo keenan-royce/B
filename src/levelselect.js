@@ -8,7 +8,7 @@
 
 			this.game.load.spritesheet( 'lvl-button', 'assets/img/lvlbutton.png', 80, 80 );
 			this.game.load.spritesheet('button', 'assets/img/button_grey.png', 102, 30);
-			this.game.load.spritesheet('bird', 	'assets/img/b_kirbstyle.png', 32, 32)
+			this.game.load.spritesheet('bird', 	'assets/img/b_kirbstyle.png', 48, 32)
 			// load the assets we need for the splash/menu state
 	    this.game.load.image( 'level-select', 'assets/img/levelselect.png' );
 			this.game.load.image( 'lock', 'assets/img/lock.png' );
@@ -94,8 +94,8 @@
 		}
 
 		this.bird = this.game.add.sprite(120, 180, 'bird');
-		this.bird.anchor.set(0.5);
-		this.bird.animations.add( 'right', [1, 2], 3, true );
+		this.bird.anchor.set(0.7,0.5);
+		this.bird.animations.add( 'right', [4, 5], 3, true );
 		this.bird.x = 120+180*(this.saved_state.level-1);
 
 		};
