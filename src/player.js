@@ -206,6 +206,7 @@
 		this.birdHealthBar = new HealthBar(this.game, {x:60, y: 470});
 		this.birdHealthBar.setFixedToCamera(true);
 		this.canDoubleJump = true;
+		this.holding = false;
 
 		this.bullets = this.game.add.group();
 		this.bullets.enableBody = true;
@@ -653,6 +654,8 @@
 		var state = this.fsm.getState();
 		var save = this.game.input.keyboard.isDown(Phaser.Keyboard.M);
 
+
+
 		var key_event = this.game.input.keyboard.event;
 		if (save) {
 			if(typeof(window.localStorage) != 'undefined'){
@@ -775,9 +778,18 @@
 			}
 
 		case 'falling':
-			// reset horizontal velocity
+		    
+		    if (up && (this.body.blocked.right || this.body.blocked.left)) {
+		        this.body.velocity.y = 0;
+		        this.body.velocity.x = 0;
+		        this.holding = true;
+		    } else {
+		        this.body.drag.x = 500;
+		        this.holding = false;
+		    }
 
-				this.body.drag.x = 500;
+
+
 				// land?
 				if( this.body.touching.down || this.body.blocked.down ) {
 					this.fsm.consumeEvent( 'land' );
@@ -790,7 +802,7 @@
 					if (this.time.elapsedSince(this.doubleJumpTimer) < this.jump_time_out)
 						jump = false;
 
-					if( jump && this.canDoubleJump ){
+					if( jump && this.canDoubleJump && !this.holding ){
 						this.fsm.consumeEvent( 'jump' );
 						this.canDoubleJump = false;
 					} else if (buttons[6] && this.canDash()) {
@@ -820,7 +832,6 @@
 					} else {
 						this.fsm.consumeEvent('fall');
 					}
-					//console.log('done dashing');
 				}
 				if (this.body.velocity.x > 0){
 					this.canDoubleJump = true;
