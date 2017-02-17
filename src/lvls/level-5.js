@@ -48,6 +48,12 @@
 				width: 48,
 				height:30
 			},
+            {
+                name: 'dog',
+                url: 'assets/img/baddie_cat_1.png',
+                width: 16,
+                height: 16
+            },
 			{
 				name: 'bad-cat',
 				url: 'assets/img/baddie_cat_1.png',

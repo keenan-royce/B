@@ -127,8 +127,7 @@
 		this.fsm = new Nadion.StateMachine( player_states, this );
 
 		//we just need the last letter of the key "level-#"
-		this.level = game_state.key.slice(-1);
-		console.log(this.level);
+		this.level = game_state.key.slice(-1);		
 
 		// yes, this is the player sprite!
 		// (if you don't set this on some sprite the game won't be able
@@ -292,8 +291,8 @@
 
 
 	MyGame.Player.prototype.reset = function() {
-		console.log('reset player');
-		console.log(this.initial_x + ' ' + this.initial_y);
+		//console.log('reset player');
+		//console.log(this.initial_x + ' ' + this.initial_y);
 		this.body.maxVelocity.x = 250;
 		this.x = this.initial_x;
 		this.y = this.initial_y;
@@ -445,16 +444,18 @@
 
 
 	MyGame.Player.prototype.spriteCollisionCallback = function(p , s ) {
-		// s is the other spirte that we're hitting
-		if( s instanceof MyGame.Jumpcat ){
-			this.hit(25);
-		} else if (s instanceof MyGame.Walkingcat ){
-			this.hit(25);
-		} else if (s instanceof MyGame.Bigcat ){
-			this.hit(50);
-		} else if (s instanceof MyGame.Shootingcat){
-			this.hit(100);
-		}
+	    // s is the other sprite that we're hitting
+	    if( s instanceof MyGame.Jumpcat ){
+	        this.hit(25);
+	    } else if (s instanceof MyGame.Walkingcat ){
+	        this.hit(25);
+	    } else if (s instanceof MyGame.Bigcat ){
+	        this.hit(50);
+	    } else if (s instanceof MyGame.Shootingcat){
+	    this.hit(100);		
+	    }else if (s instanceof MyGame.Dogjumpleft || s instanceof MyGame.Dogjumpright){
+            this.hit(100);
+	    }
 	};
 
 	MyGame.Player.prototype.bulletCollisionCallback = function(p, s) {
@@ -466,7 +467,9 @@
 		} else if (s instanceof MyGame.Walkingcat){
 			p.kill();
 			s.kill();
-			this.player_score = this.player_score + 10
+		} else if (s instanceof MyGame.Dogjumpleft || s instanceof MyGame.Dogjumpright) {
+		    p.kill();
+		    s.kill();			
 		} else if (s instanceof MyGame.Shootingcat){
 			p.kill();
 			s.kill();
