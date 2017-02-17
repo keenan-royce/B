@@ -25,9 +25,8 @@
 		this.lvlbuttons = {};
 		this.lvltext = {};
 		this.locks = {};
-
-        // Note: Should probably go from 1-4, then second row 5-8
-        // Add the first row of buttons (0-3)
+        
+        // Add the first row of buttons (1-4)
 		for (var i = 0; i < 4; i++) {
 		//for (var i = 0; i < 5; i++) {
 				this.lvlbuttons[i] = this.game.add.button(80+180*i,150, 'lvl-button');
@@ -36,13 +35,13 @@
 				this.lvlbuttons[i].name = i;
 				this.lvlbuttons[i].inputEnabled = true;
 				this.lvlbuttons[i].events.onInputDown.add(loadLevel, this);
-				this.lvltext[i] = this.game.add.bitmapText(80+180*i+40,190, 'carrier_command', '' + i + '', 15);
+				this.lvltext[i] = this.game.add.bitmapText(80+180*i+40,190, 'carrier_command', '' + (i + 1) + '', 15);
 				this.lvltext[i].anchor.set(0.5);
 				this.locks[i] = this.game.add.sprite(120+180*i,185, 'lock')
 				this.locks[i].anchor.set(0.5);
 		}
 
-        // Add second row of buttons (4-7)	    
+        // Add second row of buttons (5-8)	    
         j = 4 // number of first level in second row
 		for (i = j; i < j + 4; i++) {				
 				this.lvlbuttons[i] = this.game.add.button(80+180*(i-j),300, 'lvl-button');
@@ -51,7 +50,7 @@
 				this.lvlbuttons[i].name = i;
 				this.lvlbuttons[i].inputEnabled = true;
 				this.lvlbuttons[i].events.onInputDown.add(loadLevel, this);
-				this.lvltext[i] = this.game.add.bitmapText(80+180*(i-j)+40,340, 'carrier_command', '' + i + '', 15);
+				this.lvltext[i] = this.game.add.bitmapText(80+180*(i-j)+40,340, 'carrier_command', '' + (i + 1) + '', 15);
 				this.lvltext[i].anchor.set(0.5);
 				this.locks[i] = this.game.add.sprite(120+180*(i-j),335, 'lock')
 				this.locks[i].anchor.set(0.5);
