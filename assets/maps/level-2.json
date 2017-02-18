@@ -166,27 +166,6 @@
                  "y":1255
                 }, 
                 {
-                 "height":30,
-                 "id":5,
-                 "name":"bad-cat",
-                 "properties":
-                    {
-                     "idle-period":"200",
-                     "jump-velocity":"20"
-                    },
-                 "propertytypes":
-                    {
-                     "idle-period":"string",
-                     "jump-velocity":"string"
-                    },
-                 "rotation":0,
-                 "type":"Jumpcat",
-                 "visible":true,
-                 "width":31,
-                 "x":513.5,
-                 "y":384
-                }, 
-                {
                  "height":25.3334,
                  "id":12,
                  "name":"teleport",
@@ -273,6 +252,25 @@
                  "width":31,
                  "x":1418.5,
                  "y":408
+                }, 
+                {
+                 "height":30,
+                 "id":24,
+                 "name":"bad-cat",
+                 "properties":
+                    {
+                     "idle-period":"200"
+                    },
+                 "propertytypes":
+                    {
+                     "idle-period":"string"
+                    },
+                 "rotation":0,
+                 "type":"Jumpcat",
+                 "visible":true,
+                 "width":31,
+                 "x":510.5,
+                 "y":387
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -323,7 +321,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":24,
+ "nextobjectid":25,
  "orientation":"orthogonal",
  "properties":
     {
