@@ -49,8 +49,8 @@ var MyGame = (function() {
 //*/
 		//	for shitty qwerty users
 		///*
-		KEY_L_UP : Phaser.Keyboard.COMMA,
-		KEY_L_RIGHT : Phaser.Keyboard.E,
+		KEY_L_UP : Phaser.Keyboard.W,
+		KEY_L_RIGHT : Phaser.Keyboard.D,
 		KEY_L_DOWN : Phaser.Keyboard.O,
 		KEY_L_LEFT : Phaser.Keyboard.A,
 		KEY_R_UP : Phaser.Keyboard.UP,
