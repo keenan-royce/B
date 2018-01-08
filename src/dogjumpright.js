@@ -72,7 +72,8 @@
 		this.time = this.game.time;
 		this.idle_time = this.time.now;	    
 		this.idle_period = 500; // wait half a second (500 ms)
-		this.lastFrame = 0; // initialize variable to 0 so the Dogjumpright jumps right first
+		this.initial_last_frame = 0;
+		this.lastFrame = this.initial_last_frame; // initialize variable to 0 so the Dogjumpright jumps right first
 
 		// sprite fields
 		this.body.bounce.y = 0.0;
@@ -93,17 +94,19 @@
 		this.y = this.initial_y;
 		this.body.velocity.x = 0;
 		this.body.velocity.y = 0;
-		this.fsm.reset();
+		this.lastFrame = this.initial_last_frame; // face the dog in the correct direction
+		this.frame = 1;
+		//this.fsm.reset(); // don't think we need this here
 	};
 
 	// state machine event handlers:
 	MyGame.Dogjumpright.prototype.idle = function()
 	{
-        // If the Dogjumpright jumped left, face left
+        // If the dog jumped left, face left
 	    if (this.lastFrame == 0) {
 	        this.frame = 1;
 	    }
-        // If the Dogjumpright jumped right, face right
+        // If the dog jumped right, face right
 	    else
 	        this.frame = 2;
 

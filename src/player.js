@@ -291,10 +291,9 @@
 		this.game.state.start( 'default', true, true );
 	};
 
-
-	MyGame.Player.prototype.reset = function() {
-		//console.log('reset player');
-		//console.log(this.initial_x + ' ' + this.initial_y);
+    // This is called when the level loads for some reason. I don't think it should
+	MyGame.Player.prototype.reset = function() {        
+		
 		this.body.maxVelocity.x = 250;
 		this.x = this.initial_x;
 		this.y = this.initial_y;
@@ -306,8 +305,8 @@
 		this.body.velocity.x = 0;
 		this.body.velocity.y = 0;
 		this.birdHealthBar.setPercent(100);
-		this.health = 100;
-		this.fsm.reset();
+		this.health = 100;        			    
+		// this.fsm.reset(); // this doesn't seem to change anything
 	};
 
 	// state machine event handlers:
@@ -506,7 +505,14 @@
 			this.health = this.health - damage;
 			this.birdHealthBar.setPercent(this.health);
 			if (this.health <= 0) {
-				this.reset();
+                // reset the location of all the sprites besides the player
+			    var game_state = this.game.state.states[this.game.state.current]; // for readability
+			    // 0 is player, 1 is sprites			                                            
+			    for (var i = 0; i < game_state.groups[1].children.length; i++) {
+                    game_state.groups[1].children[i].reset()                    
+			    }
+                // reset the player
+			    this.reset();
 			}
 		}
 		// enter the 'stunned' state and bounce back a bit
